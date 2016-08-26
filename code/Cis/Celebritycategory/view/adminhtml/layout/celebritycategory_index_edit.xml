@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+       <!-- for js file -->
+        <script src="Cis_Celebritycategory::js/jquery.min.js"></script>
+        <script src="Cis_Celebritycategory::js/custom_Celebritycategory.js"/>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+        <link src="jquery/fileUploader/bootstrap.js"/>
+    </head>
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Cis\Celebritycategory\Block\Adminhtml\Celebritycategory\Edit" name="celebritycategory_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Cis\Celebritycategory\Block\Adminhtml\Celebritycategory\Edit\Tabs" name="celebritycategory_edit_tabs">
+                <block class="Cis\Celebritycategory\Block\Adminhtml\Celebritycategory\Edit\Tab\Main" name="celebritycategory_edit_tab_main"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">celebritycategory_edit_tab_main</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

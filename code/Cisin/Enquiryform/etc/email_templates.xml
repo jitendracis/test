@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+<template id="send_email_email_template_contact" label="Email Form" file="send_enquiry_contact.html" type="text" module="Cisin_Enquiryform" area="frontend"/>
+
+<template id="send_email_email_template_reatiler" label="Email Form" file="send_enquiry_retailer.html" type="text" module="Cisin_Enquiryform" area="frontend"/>
+
+<template id="send_email_email_template2" label="Email Form" file="send_enquiry2.html" type="text" module="Cisin_Enquiryform" area="frontend"/>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">        
+    <referenceContainer name="content">
+        <block template="helloworld.phtml" class="Cis\Helloworld\Block\Helloworld" name="helloworld1111"/>
+    </referenceContainer>
+</page>-->
+
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column-faviana" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Contact Us</title>
+    </head>    
+    <referenceBlock name="page.main.title" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Cisin\Enquiryform\Block\Enquiryform" name="enquiryform" template="enquiryform.phtml" />
+            
+        </referenceContainer>
+
+</page>
+

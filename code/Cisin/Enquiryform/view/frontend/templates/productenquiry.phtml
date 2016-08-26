@@ -1,0 +1,93 @@
+<?php
+
+
+ $urlInterface = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\UrlInterface');
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+   $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');//get current category
+
+
+?>
+<div id="product_enquiry" style="display: none;">
+<form class="form contact enquiryform"
+      action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <div class="field pname">
+            <label class="label" for="pname"><span><?php /* @escapeNotVerified */ echo __('Product Name ') ?></span></label>
+            <div class="control">
+                <input name="pname" readonly="readonly" id="pname" title="<?php /* @escapeNotVerified */ echo __('Product Name') ?>" value="<?php echo $product->getName();?>" class="input-text" type="text"/>
+                <input name="pid" id="pid" title="<?php /* @escapeNotVerified */ echo __('Product Name') ?>" value="<?php echo $product->getId();?>" class="input-text" type="hidden"/>
+            </div>
+        </div>
+        <div class="field qty required">
+            <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Quantity ') ?></span></label>
+            <div class="control">
+                <input name="qty" id="qty" title="<?php /* @escapeNotVerified */ echo __('Quantity') ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                <input name="pid" id="pid" title="<?php /* @escapeNotVerified */ echo __('Quantity') ?>" value="<?php echo $product->getId();?>" class="input-text" type="hidden" />
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?php /* @escapeNotVerified */ echo __('Name') ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <input type="hidden" name="cuurl" value="<?php echo $urlInterface->getCurrentUrl();?>"/>
+        <div class="field company">
+            <label class="label" for="company"><span><?php /* @escapeNotVerified */ echo __('Company Name') ?></span></label>
+            <div class="control">
+                <input name="company" id="company" title="<?php /* @escapeNotVerified */ echo __('Company Name') ?>" class="input-text" type="text"/>
+            </div>
+        </div>
+        <div class="field job">
+            <label class="label" for="job"><span><?php /* @escapeNotVerified */ echo __('Job') ?></span></label>
+            <div class="control">
+                <input name="job" id="job" title="<?php /* @escapeNotVerified */ echo __('Job') ?>" class="input-text" type="text"/>
+            </div>
+        </div>
+         <div class="field email required">
+            <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Email Address') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email Address') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+         <div class="field telephone required">
+            <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __('Telephone number') ?></span></label>
+            <div class="control">
+                <input name="telephone" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Telephone number') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field zipcode"> 
+            <label class="label" for="zipcode"><span><?php /* @escapeNotVerified */ echo __('Zipcode') ?></span></label>
+            <div class="control">
+                <input name="zipcode" id="zipcode" title="<?php /* @escapeNotVerified */ echo __('Zipcode') ?>" class="input-text" type="text"/>
+            </div>
+        </div>
+        <div class="field place">
+            <label class="label" for="place"><span><?php /* @escapeNotVerified */ echo __('Place') ?></span></label>
+            <div class="control">
+                <input name="place" id="place" title="<?php /* @escapeNotVerified */ echo __('Place') ?>" class="input-text" type="text"/>
+            </div>
+        </div>
+       <div class="field comment">
+            <label class="label" for="comment"><span><?php /* @escapeNotVerified */ echo __('Possible questions or remarks') ?></span></label>
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('Possible questions or remarks') ?>" class="input-text" cols="5" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+        <div class="primary">
+           
+            <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                <span><?php /* @escapeNotVerified */ echo __('Send Enquiry') ?></span>
+            </button>
+        </div>
+    </div>
+        <?php echo $block->getChildHtml('form.additional.info'); ?>
+    </fieldset>
+    
+</form>
+</div>

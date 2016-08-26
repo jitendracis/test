@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cisin_enquiryform>
+           
+           <email1>
+                <recipient_email1>
+                    <![CDATA[pooja.p@cisinlabs.com]]>
+                </recipient_email1>
+                <sender_email_identity1>custom2</sender_email_identity1>
+               <!--  <show_email_template>send_email_email_template_contact</show_email_template> -->
+            </email1>
+        </cisin_enquiryform>
+    </default>
+</config>

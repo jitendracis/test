@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Cis_Adminhtml::admin">
+                <resource id="Cis_Celebritycategory::celebritycategory" title="Celebritycategory" sortOrder="40">
+                    <resource id="Cis_Celebritycategory::manage" title="Celebritycategory Module" sortOrder="10">
+						<resource id="Cis_Celebritycategory::save" title="Save Celebritycategory" sortOrder="10" />
+                        <resource id="Cis_Celebritycategory::news_delete" title="Delete Celebritycategory" sortOrder="20" />
+					</resource>
+                </resource>
+                <resource id="Cis_Adminhtml::stores">
+                    <resource id="Cis_Adminhtml::stores_settings">
+                        <resource id="Cis_Adminhtml::config">
+                            <resource id="Cis_Celebritycategory::config_celebritycategory" title="Celebritycategory Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

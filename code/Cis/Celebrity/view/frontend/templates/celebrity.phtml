@@ -1,0 +1,67 @@
+<?php $_celebrity = $this->getCollection(); ?>
+<?php
+$catId = base64_decode(urldecode($this->getRequest()->getParam('id')));
+if(!empty($catId)){
+    $_celebrity->addFieldToFilter('categoryId', $catId);
+}
+
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of\Magento\Framework\App\ObjectManager
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$helper = $this->helper('Cis\Celebrity\Helper\Data');
+$categoryCollection = $helper->getParentCategories();
+?>
+<div class="col-md-2 category">
+    <?php if(count($categoryCollection)): ?>
+        <h2 class="filter hidden-md hidden-lg">FILTER</h2>
+
+        <div class="panel-group category-holder" id="accordion" role="tablist" aria-multiselectable="true">
+            <?php $catCount = 0; ?>
+            <?php foreach ($categoryCollection as $categoryItem): ?>
+            <div class="panel">
+                <div class="panel-heading" role="tab" id="heading<?php echo $catCount;?>">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $catCount;?>" aria-expanded="false" aria-controls="collapse<?php echo $catCount;?>"><?php echo $categoryItem['title']; ?></a> </h4>
+                </div>
+                <div id="collapse<?php echo $catCount;?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading  <?php echo $catCount;?>">
+                    <div class="panel-body">
+                        <ul>
+                            <?php $childCategoryCollection = $helper->getChildCategories($categoryItem['celebritycategory_id']); ?>
+                            <?php foreach ($childCategoryCollection as $childCategoryItem): ?>
+                                <li><a href="<?php echo $this->getBaseUrl().'celebrity/index/index/id/'.urlencode(base64_encode($childCategoryItem['celebritycategory_id'])); ?>"><?php echo $childCategoryItem['title']; ?></a></li>
+                            <?php endforeach; ?>                                        
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                <?php $catCount++; endforeach; ?>
+            </div>
+        <?php endif; ?>
+        <!-- end panel-group--> 
+</div> <!--end category-->
+<div class="col-md-10 product-list">
+    <div class="row">
+        <?php if ($_celebrity->getSize()): ?>
+            <?php foreach ($_celebrity as $celebrityItem): ?>
+                <div id="item_<?php echo $celebrityItem->getId() ?>" class="col-sm-3">        
+                        <div class="prod-box celebrity">
+                            <a href="<?php echo $this->escapeHtml($celebrityItem->getProductlink()) ?>"> <img src="<?php echo $mediaUrl . $this->escapeHtml($celebrityItem->getImage()) ?>" alt=""/></a>
+                            <div class="celebrity-meta">
+                                <h3><?php echo $this->escapeHtml($celebrityItem->getTitle()) ?></h3>
+                                <p><span><?php echo $this->escapeHtml($celebrityItem['shortdesciption1']); ?></span> <?php echo $this->escapeHtml($celebrityItem['shortdesciption2']); ?></p>
+                                <ul>
+                                    <li><a href="#" class="fa fa-facebook-square"> </a></li>
+                                    <li><a href="#" class=" fa fa-twitter"> </a></li>
+                                    <li><a href="#" class=" fa fa-pinterest"> </a></li>
+                                </ul>
+                            </div>
+                            <!--end celebrity-meta--> 
+                        </div> <!--end prod-box--> 
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+                <div class="message info empty"><span><?php echo __('You have no Celebrity.'); ?></span></div>
+        <?php endif ?>
+        <?php echo $this->getPager() ?>
+    </div>
+</div>

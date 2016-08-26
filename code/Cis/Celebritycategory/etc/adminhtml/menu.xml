@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!--<add id="Cis_Celebritycategory::celebritycategory" title="Celebritycategory" module="Cis_Celebritycategory" sortOrder="30" resource="Cis_Celebritycategory::celebritycategory"/>
+        <add id="Cis_Celebritycategory::celebritycategory_manage" title="All Items" module="Cis_Celebritycategory" sortOrder="10" parent="Cis_Celebritycategory::celebritycategory" action="celebritycategory/index/" resource="Cis_Celebritycategory::manage"/>-->
+    </menu>
+</config>

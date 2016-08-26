@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Cisin. All rights reserved.
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <block class="Cisin\Enquiryform\Block\Adminhtml\Enquiryitems\Edit\Tabs" name="cisin_enquiryform_enquiryitems_edit_tabs">
+                <block class="Cisin\Enquiryform\Block\Adminhtml\Enquiryitems\Edit\Tab\Main" name="cisin_enquiryform_enquiryitems_edit_tab_main"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">cisin_enquiryform_enquiryitems_edit_tab_main</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content"> 
+            <block class="Cisin\Enquiryform\Block\Adminhtml\Items\Edit" name="enquiryform_enquiryitems_edit"/>
+        </referenceContainer>
+    </body>
+</page>

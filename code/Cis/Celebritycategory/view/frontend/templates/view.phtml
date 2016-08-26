@@ -1,0 +1,30 @@
+<?php
+/**
+ * Celebritycategory template for separate item
+ *
+ */
+
+/**
+ * @var $this Cis\Celebritycategory\Block\View
+ * @see Cis\Celebritycategory\Block\View
+ */
+?>
+<?php $_celebritycategoryItem = $this->getCelebritycategory(); ?>
+    <div class="celebritycategory_item_subtitle">
+        <?php echo $this->formatDate($_celebritycategoryItem->getPublishedAt()) ?> |
+        <?php echo $this->escapeHtml($_celebritycategoryItem->getAuthor()) ?>
+    </div>
+
+<div class="celebritycategory_item_view">
+    <?php if ($imageUrl = $this->getImageUrl($_celebritycategoryItem, 400)): ?>
+       <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($_celebritycategoryItem->getTitle()) ?>" /></p>
+    <?php endif; ?>
+
+    <div class="celebritycategory_item_content"><?php echo $_celebritycategoryItem->getContent() ?></div>
+
+    <div class="pager">
+        <a href="<?php echo $this->getBackUrl() ?>">
+            <?php echo __('Return to list') ?>
+        </a>
+    </div>
+</div>

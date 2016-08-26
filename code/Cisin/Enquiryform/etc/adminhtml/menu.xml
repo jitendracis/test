@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Cisin. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../app/code/Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="cisin::base" title="Cisin" module="Cisin_Enquiryform" sortOrder="90" resource="Cisin_Enquiryform::sample"/>
+        <add id="cisin_enquiryform::enquiryformmanager" title="Enquiry Manager" module="Cisin_Enquiryform" sortOrder="10" parent="cisin::base"  resource="Cisin_Enquiryform::items"/>
+        <add id="cisin_enquiryform::enquiryform" title="Product Enquiry List" module="Cisin_Enquiryform" sortOrder="10" parent="cisin_enquiryform::enquiryformmanager" action="cisin_enquiryform/items/" resource="Cisin_Enquiryform::items"/>
+        <add id="cisin_enquiryform::newenquiryform" title="General Enquiry List" module="Cisin_Enquiryform" sortOrder="10" parent="cisin_enquiryform::enquiryformmanager" action="cisin_enquiryform/enquiryitems/" resource="Cisin_Enquiryform::items"/>
+        <add id="cisin_enquiryform::contactquiryform" title="Contact Enquiry List" module="Cisin_Enquiryform" sortOrder="10" parent="cisin_enquiryform::enquiryformmanager" action="cisin_enquiryform/contactsitems/" resource="Cisin_Enquiryform::items"/>
+        
+    </menu>
+</config>

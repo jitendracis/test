@@ -1,0 +1,25 @@
+<?php /** @var $block \Fc\Faqs\Block\FaqsList */ ?>
+
+<div class="col-md-9 faq-left">
+<h1 class="faq-title">FAQS</h1>
+<div id="accordion" class="panel-group">
+    <?php $i = 1; foreach ($block->getFaqs() as $faq): ?>
+        <div class="panel">
+            <div id="heading<?php echo $i ;?>" class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" href="#collapse<?php echo $i ;?>" data-toggle="collapse" data-parent="#accordion"><?php echo $faq->getTitle() ?></a>
+                </h4>
+            </div>
+            <div id="collapse<?php echo $i ;?>" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php echo $faq->getContent(); ?>
+                </div>
+            </div>
+        </div>
+    <?php $i++; endforeach; ?>
+</div>
+</div>
+<div class="col-md-3 contact-right hidden-xs hidden-sm">
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('headquarter_address')->toHtml();?>
+</div>
+
