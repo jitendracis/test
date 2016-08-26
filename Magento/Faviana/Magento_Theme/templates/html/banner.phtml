@@ -1,0 +1,7 @@
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+    if($category && $this->getFeatureImageUrl($category)){
+            echo "<img src='".$this->getFeatureImageUrl($category)."'>";
+    }
+?>

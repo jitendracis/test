@@ -1,0 +1,129 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<!-- <form class="form contact"
+      action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Write Us') ?></span></legend><br />
+        <div class="field note no-label"><?php /* @escapeNotVerified */ echo __('Jot us a note and we’ll get back to you as quickly as possible.') ?></div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?php /* @escapeNotVerified */ echo __('Name') ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="field telephone">
+            <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __('Phone Number') ?></span></label>
+            <div class="control">
+                <input name="telephone" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" value="" class="input-text" type="text" />
+            </div>
+        </div>
+        <div class="field comment required">
+            <label class="label" for="comment"><span><?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?></span></label>
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+            </div>
+        </div>
+        <?php echo $block->getChildHtml('form.additional.info'); ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+</form> -->
+
+<div class="container ctn">
+<div class="row">
+
+
+<div class="col-md-9 left-bar">
+<h1 class="contact-title"><?php echo __('CONTACT US'); ?> </h1>
+<ul class="form-list">
+<li><a href="#" class="customer"><?php echo __('CUSTOMER');?></a></li>
+<li><a href="#" class="public-relation"><?php echo __('PUBLIC RELATIONS');?></a></li>
+<li><a href="#" class="retailer"><?php echo __('RETAILER');?></a></li>
+
+</ul>
+
+<!--
+  form contant 
+  Date:23/08/16
+-->
+<div class="custom-forms">
+<div class="contactus-form">
+      <?php echo $this->getLayout()->createBlock("Magento\Contact\Block\ContactForm")->setTemplate("Magento_Contact::contact-form.phtml")->toHtml();?>
+</div>
+<div class="public-relation-form">
+          <?php echo $this->getLayout()->createBlock("Magento\Contact\Block\ContactForm")->setTemplate("Magento_Contact::public-relation-form.phtml")->toHtml();?>
+</div>
+<div class="retailer-form">
+          <?php echo $this->getLayout()->createBlock("Magento\Contact\Block\ContactForm")->setTemplate("Magento_Contact::retailer-form.phtml")->toHtml();?>
+</div>
+</div>
+<!--end-->
+</div>
+
+<div class="col-md-3  right-bar hidden-xs hidden-sm">
+ <div class="address-box">
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('headquarter_address')->toHtml();?>
+
+</div><!--end address-box-->
+
+</div> <!--end right-bar-->
+
+
+
+<div class="clearfix"></div>
+</div> <!--end row-->
+</div> <!--end ctn-->
+
+
+<script type="text/javascript">
+    // customer public-relation retailer
+    // contactus-form public-relation-form retailer-form
+    jQuery(document).ready(function(){
+        jQuery(".contactus-form").hide();
+        jQuery(".public-relation-form").hide();
+        jQuery(".retailer-form").hide();
+     jQuery(".customer").click(function(){
+         jQuery(".contactus-form").toggle();
+         jQuery(".public-relation-form").hide();
+         jQuery(".retailer-form").hide();
+
+     })
+     jQuery(".public-relation").click(function(){
+         jQuery(".public-relation-form").toggle();
+         jQuery(".contactus-form").hide();
+         jQuery(".retailer-form").hide();
+
+     })
+     jQuery(".retailer").click(function(){
+         jQuery(".retailer-form").toggle();
+         jQuery(".contactus-form").hide();
+         jQuery(".public-relation-form").hide();
+     })
+
+    })
+</script>
+
+

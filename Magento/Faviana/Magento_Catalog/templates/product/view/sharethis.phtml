@@ -1,0 +1,28 @@
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct();
+    $productName = $_product->getName();
+    $productUrl = $_product->getProductUrl();
+    $productImage = $block->getUrl().'pub/media/catalog/product' . $_product->getImage();
+?>
+
+<div class="share-social clearfix">
+<ul>
+    <li><?php echo __('SHARE') ; ?></li>
+    <li>
+        <a class="fa fa-facebook" href="javascript:popWin('https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($productUrl); ?>&t=<?php echo urlencode($productName); ?>', 'facebook', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo __('Share on Facebook') ?>"> </a>
+    </li>
+    <li>
+        <a class="fa fa-pinterest" href="javascript:popWin('https://pinterest.com/pin/create/button/?url=<?php echo urlencode($productUrl); ?>&media=<?php echo urlencode($productImage); ?>&description=<?php echo urlencode($productName); ?>', 'pinterest', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo __('Pin it') ?>"> </a>
+    </li>
+    <li>
+        <a class="fa fa-twitter" href="javascript:popWin('http://twitter.com/home/?status=<?php echo urlencode($productName . ' (' . $productUrl . ')'); ?>', 'twitter', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo __('Tweet') ?>"> </a>
+    </li>
+    <li>
+        <a class="fa fa-google-plus" href="javascript:popWin('https://plus.google.com/share?url=<?php echo urlencode($productUrl); ?>', 'google', 'width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes');" title="<?php echo __('Share on Google Plus') ?>"> </a>
+    </li>
+    <li>
+        <a class="fa fa-envelope" href="#"> </a>
+    </li>       
+</ul>
+<a href="javascript:void(0)" class="print"><?php echo __('Print') ; ?></a></div>

@@ -1,0 +1,57 @@
+ <form class="form contact"
+      action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'>
+<div class="form-1">
+<ul>
+<li>
+   <span><?php echo __('Name');?></span>
+   <input type="text" name="name" data-validate="{required:true}" class="form-control" placeholder="Full Name">
+</li>
+<li>
+   <span><?php echo __('Email');?></span>
+   <input type="email" name="email" class="form-control" placeholder="Email" data-validate="{required:true, 'validate-email':true}">
+</li>
+<li>
+   <span><?php echo __('Phone Number');?></span>
+   <input type="text" name="phoneno" data-validate="{required:true}" class="form-control" placeholder="PhoneNo">
+</li>
+<li>
+<div class="row">
+<div class="col-sm-6 clearfix mar-b-30">
+   <span><?php echo __('Country');?> </span>
+   <select name="country" class="s-box form-control">
+    <option value=""><?php echo __('Please Select...');?></option>
+    <option value="1"><?php echo __('Business Insurance');?></option>
+    <option value="2"><?php echo __('Equity Release');?></option>
+    <option value="3"><?php echo __('Financial Planning');?></option>
+    <option value="4"><?php echo __('General Insurance');?></option>
+    <option value="5"><?php echo __('health Insurance');?></option>
+   </select>
+</div>
+
+<div class="col-sm-6">
+    <span><?php echo __('City');?></span>
+    <input type="text" name="city" data-validate="{required:true}" class="form-control" placeholder="city">
+
+</div>
+
+<div class="clearfix"></div>
+</div>
+</li>
+<li>
+   <span><?php echo __('Question/Comment');?></span>
+   <textarea class="form-control textarea" name="comment" data-validate="{required:true}" rows="3" placeholder="Question/Comment"></textarea>
+</li>
+<li class="checkbox"> 
+    <input type="checkbox" id="checkbox10">
+     <label for="checkbox10">
+            <?php echo __('Subscribe to our mailing list.');?>
+    </label></li>
+<li class="text-center"><a href="javascript:void(0)" class="btn btn-black"><?php echo __('SUBMIT');?></a></li>
+</ul>
+
+</div> <!--end form-1-->
+</form> 

@@ -1,0 +1,88 @@
+<div class="form-1">
+<ul>
+<li class="clearfix">
+  <span><?php echo __('Select Language');?></span>
+  <select name="language" class="s-box form-control">
+    <option value=""><?php echo __('PLEASE SELECT');?></option>
+    <option value="1"><?php echo __('ENGLISH');?></option>
+    <option value="2"><?php echo __('SPANISH');?></option>
+    <option value="3"><?php echo __('FRENCH');?></option>
+    <option value="4"><?php echo __('GERMAN');?></option>
+    <option value="5"><?php echo __('PORTUGUESE');?></option>
+        <option value="6"><?php echo __('ARABIC');?></option>
+            <option value="7"><?php echo __('RUSSIAN');?></option>
+             <option value="8"><?php echo __('TURKISH');?></option>
+              <option value="9"><?php echo __('ITALIAN');?></option>
+   
+    </select>
+</li>
+<li>
+    <span><?php echo __('Store Name');?></span>
+    <input type="text" name="storename" class="form-control" data-validate="{required:true}" placeholder="Store Name">
+</li>
+<li>
+    <span><?php echo __('Email');?></span>
+    <input type="email" name="email" data-validate="{required:true, 'validate-email':true}" class="form-control" placeholder="Email">        
+</li>
+<li>
+    <span><?php echo __('Password');?></span>
+    <input type="password" name="password" data-validate="{required:true}" class="form-control" placeholder="Password">
+</li>
+<li>
+   <span><?php echo ('Password (Again)');?></span>
+   <input type="password" name="password" data-validate="{required:true}" class="form-control" placeholder="Confirm Password">
+</li>
+<li>
+   <span><?php echo __('Country');?></span>
+   <input type="text" class="form-control" data-validate="{required:true}" name="country" placeholder="Country">
+</li>
+<li>
+  <span><?php echo __('Address');?></span>
+  <input type="text" name="address" data-validate="{required:true}" class="form-control" placeholder="Address">
+</li>
+<li>
+
+<div class="row">
+ <div class="col-sm-6 clearfix mar-b-30">
+  <span><?php echo __('City');?></span>
+  <input type="text" name="city" data-validate="{required:true}" class="form-control" placeholder="City">
+</div>
+
+<div class="col-sm-6 clearfix mar-b-30">
+  <span><?php echo __('State');?> </span>
+  <input type="text" name="state" data-validate="{required:true}" class="form-control" placeholder="State">
+</div>
+<div class="clearfix"></div>
+</div>
+</li>
+<li class="clearfix">
+   <span><?php echo __('How did you hear about us?');?></span>
+   <select class="s-box form-control">
+    <option value=""><?php echo __('PLEASE SELECT');?></option>
+    <option value="1"><?php echo __('MASS ENGINE');?></option>
+    <option value="2"><?php echo __('FROM A FRIEND');?></option>
+    <option value="3"><?php echo __('SOCIAL MEDIA');?></option>
+    <option value="4"><?php echo __('OTHER');?></option>
+  
+   </select>
+</li>
+<li>
+   <span><?php echo __('Contact Person');?></span>
+   <input type="text" class="form-control" data-validate="{required:true}" name="contactperson" placeholder="Contact Person">
+</li>
+<li>
+   <span><?php echo __('Comments');?></span>
+   <textarea class="form-control textarea" data-validate="{required:true}" rows="3" name="comments" placeholder="comment"></textarea>
+</li>
+<li class="checkbox"> <input type="checkbox" id="checkbox11">
+    <label for="checkbox11">
+         <?php echo __('Subscribe to our mailing list.');?>
+    </label>
+</li>
+
+<li class="text-center"> <a href="javascript:void(0)" class="btn btn-black"><?php echo __('SUBMIT');?></a>
+</li>
+
+</ul>
+
+</div> <!--end form-1-->

@@ -1,0 +1,14 @@
+.page-header .panel.wrapper{
+background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    font-size: 18px;
+    height: 52px;
+    line-height: 52px;
+    overflow: hidden;
+    padding: 0 30px;
+    width: 100%;
+}
+
+.header.panel ul {
+    float: right;
+}

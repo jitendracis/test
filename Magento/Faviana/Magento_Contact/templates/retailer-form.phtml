@@ -1,0 +1,113 @@
+
+<div class="form-1">
+
+<ul>
+<li>
+   <span><?php echo __('Name');?></span>
+   <input type="text" name="name" data-validate="{required:true}" class="form-control" placeholder="Full Name">
+</li>
+<li>
+   <span><?php echo __('Email');?></span>
+   <input type="email" data-validate="{required:true, 'validate-email':true}" class="form-control" placeholder="Email">
+</li>
+<li>
+   <span><?php echo __('Daytime Phone Number');?> </span> 
+   <input type="text" name="phoneno" data-validate="{required:true}" class="form-control" placeholder="PhoneNo">
+</li>
+<li class="clearfix">
+  <span><?php echo __('I am a ...');?> </span>
+  <select class="s-box form-control">
+		<option value=""><?php echo __('PLEASE SELECT');?></option>
+		<option value="1"><?php echo __('TALENT/CELEBRITY');?></option>
+		<option value="2"><?php echo __('STYLIST');?></option>
+		<option value="3"><?php echo __('BLOGGER/INFLUENCER');?></option>
+		<option value="4"><?php echo __('PUBLICIST/AGENT/MANAGER');?></option>
+		<option value="5"><?php echo __('EDITOR/PUBLICATION');?></option>
+        <option value="5"><?php echo __('OTHER');?></option>
+   
+        
+  </select>
+</li>
+<li class="clearfix">
+   <span><?php echo __('I want to request a dress for ...');?></span>
+   <select class="s-box form-control">
+		<option value=""><?php echo __('Please Select...');?></option>
+		<option value="1"><?php echo __('RED CARPET EVENT');?></option>
+		<option value="2"><?php echo __('EDITORIAL PHOTOSHOOT');?></option>
+		<option value="3"><?php echo __('CELEBRITY APPEARANCE');?></option>
+		<option value="4"><?php echo __('MEDIA PLACEMENT');?> </option>
+		<option value="5"><?php echo __('SPONSORSHIP OPPORTUNITY');?></option>
+        
+        <option value="5"><?php echo __('OTHER');?></option>
+ </select>
+</li>
+<li>
+
+<div class="row">
+  <div class="col-sm-4 clearfix mar-b-30">
+
+   <span><?php echo __('Style Number');?>  </span>
+   <input type="text" name="stylenumber" data-validate="{required:true}" class="form-control" placeholder="STYLE NUMBER ">
+  </div>
+
+<div class="col-sm-4 clearfix mar-b-30">
+
+   <span><?php echo __('Color');?> </span>
+   <input type="text" class="form-control" data-validate="{required:true}" name="color" placeholder="COLOR">
+</div>
+
+<div class="col-sm-4 clearfix mar-b-30">
+
+   <span><?php echo __('Size');?> </span>
+   <input type="text" class="form-control" data-validate="{required:true}" name="size" placeholder="SIZE">
+</div>
+
+<div class="clearfix"></div>
+</div>
+
+</li>
+<li class="checkbox"> 
+    <input type="checkbox" id="checkbox10">
+        <label for="checkbox10">
+                <?php echo __('or request a showroom appointment.');?>	
+        </label>
+</li>
+<li>
+
+<div class="row">
+    <div class="col-sm-6 clearfix mar-b-30">
+        <span><?php echo __('Date of Event');?>	  </span>
+        <div class="input_group">
+             <input type="text" name="birthday" data-validate="{required:true}" class="form-control" placeholder="Birthday">
+             <a href="#" class="addon fa fa-calendar"></a></div>
+</div>
+
+<div class="col-sm-6 clearfix mar-b-30">
+    <span><?php echo __('Approximate Return Date');?> </span>
+    <div class="input_group">
+            <input type="text" class="form-control" data-validate="{required:true}" name="apporixmatedate" placeholder="Approximate Return Date">
+            <a href="#" class="addon fa fa-calendar"></a></div>
+</div>
+<div class="clearfix"></div>
+</div>
+</li>
+<li>
+    <span><?php echo __('Location');?></span>
+    <input type="text" class="form-control" data-validate="{required:true}" name="location" placeholder="Location">
+</li>
+<li>
+   <span><?php echo __('Additional Comments');?></span>
+   <textarea class="form-control textarea" data-validate="{required:true}" rows="3" name="comment" placeholder="comment"></textarea>
+</li>
+<li>
+    <p><?php echo __('For any additional marketing or public relations inquiries please contact');?> <a href="mailto:pr@faviana.com">pr@faviana.com</a>.
+    </p>
+</li>
+<li class="checkbox"> <input type="checkbox" id="checkbox11">
+    <label for="checkbox11">
+            <?php echo __('Subscribe to our mailing list.');?>
+    </label></li>
+<li class="text-center"> <a href="javascript:void(0)" class="btn btn-black"><?php echo __('SUBMIT');?></a></li>
+</ul>
+
+</div> <!--end form-1-->

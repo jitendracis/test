@@ -1,0 +1,46 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+	<referenceContainer name="page.wrapper" htmlClass="page-wrapper main">
+	    <container name="top_container" as="top_container" label="top_container" htmlTag="div" before="-" htmlClass="top">		
+		<block class="Magento\Framework\View\Element\Template" name="headertoplinks" template="Magento_Theme::html/headertoplinks.phtml"/>
+	    </container>
+	</referenceContainer>
+	
+	<referenceContainer name="header.container" htmlClass="header">
+	    <referenceBlock name="header.panel" remove="true" />      
+            <container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="container">
+		<container name="header_row" as="header_row" label="Page Header" htmlTag="div" htmlClass="row">
+		    <block class="Magento\Newsletter\Block\Subscribe" name="newsletter" template="subscribe_top.phtml"/>
+		    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+			<arguments>
+			    <argument name="logo_img_width" xsi:type="number">189</argument>
+			    <argument name="logo_img_height" xsi:type="number">64</argument>
+			</arguments>
+		    </block>
+		    <block class="Magento\Framework\View\Element\Template" name="toplinks" template="Magento_Theme::html/toplinks.phtml"/>
+		</container>
+	    </container>
+	    <container name="top_menu" label="Page Menu" as="top_menu" htmlTag="div" htmlClass="navi">
+		<container name="top_menu_container" label="Page Menu" as="top_menu_container" htmlTag="div" htmlClass="container">
+		    <container name="top_menu_container_row" as="top_menu_container_row" label="Page Menu" htmlTag="div" htmlClass="row">
+			<block name="top_menu.menu" class="Cis\Celebrity\Block\Menu" template="menu.phtml"/>
+		    </container>
+		</container>
+	    </container>
+        </referenceContainer>
+
+	<referenceContainer name="page.top">
+	    <referenceBlock name="catalog.topnav" remove="true" />
+        </referenceContainer>
+	
+	<referenceContainer name="footer-container">
+            <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="container">
+		<container name="footer_row" as="footer_row" label="Page Footer" htmlTag="div" htmlClass="row">
+		    <block class="Magento\Framework\View\Element\Template" name="footermobile_section" template="Magento_Theme::html/footermobile_section.phtml"/>
+		    <block class="Magento\Framework\View\Element\Template" name="footerlinks" template="Magento_Theme::html/footerlinks.phtml"/>
+		    <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="html/copyright.phtml"/>
+		</container>
+	    </container>
+        </referenceContainer>
+    </body>
+</page>

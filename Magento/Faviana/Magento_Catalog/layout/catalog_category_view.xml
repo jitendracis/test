@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="columns.top">
+            <container name="category.view.container" htmlTag="div" htmlClass="category-view" after="-">
+                <referenceBlock name="category.image" remove="true" />
+                <referenceBlock name="page.main.title" remove="true" />
+                <referenceBlock name="category.cms" remove="true" />
+                <!--<block class="Magento\Catalog\Block\Category\View" name="category.description" template="Magento_Catalog::category/description.phtml"/>-->
+            </container>
+        </referenceContainer>
+        <referenceContainer name="main.content" htmlTag="div" htmlClass="container ctn">
+                <block class="Magento\Framework\View\Element\Template" name="skip_to_content.target" before="-" template="Magento_Theme::html/skiptarget.phtml">
+                    <arguments>
+                        <argument name="target_id" xsi:type="string">contentarea</argument>
+                    </arguments>
+                </block>
+        </referenceContainer>        
+        <referenceContainer name="main" label="Main Content Container" htmlTag="div" htmlClass="column main col-md-10 product-list"/>
+        <referenceContainer name="columns" htmlClass="row" />
+        <referenceContainer name="div.sidebar.main" htmlTag="div" htmlClass="sidebar sidebar-main col-md-2 category" before="main"/>
+        <!--<referenceContainer name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional col-md-2 category" after="div.sidebar.main"/>-->
+        <referenceBlock name="div.sidebar.additional" remove="true" />
+        <referenceContainer name="main.content">
+            <block class="Magento\Catalog\Block\Category\View" name="category.description" after="-" template="Magento_Catalog::category/description.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

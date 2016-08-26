@@ -1,0 +1,37 @@
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct();
+    $tabCount = 1;
+?>
+<div class="panel-group prod-detail" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel">
+    <div class="panel-heading" role="tab" id="heading<?php echo $tabCount; ?>">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $tabCount; ?>" aria-expanded="false" aria-controls="collapse<?php echo $tabCount; ?>" class="collapsed">
+            <?php echo __('PRODUCT DETAILS') ; ?>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse<?php echo $tabCount; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $tabCount; ?>" aria-expanded="false" style="height: 0px;">
+      <div class="panel-body">
+            <?php echo $_product->getDescription(); ?>
+        </div>
+    </div>
+  </div>
+  <?php if($_product->getSizeAndFit()){ $tabCount++; ?>
+  <div class="panel">
+    <div class="panel-heading" role="tab" id="heading<?php echo $tabCount; ?>">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $tabCount; ?>" aria-expanded="false" aria-controls="collapse<?php echo $tabCount; ?>">
+          <?php echo __('SIZE &amp; FIT') ; ?>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse<?php echo $tabCount; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $tabCount; ?>" aria-expanded="false" style="height: 0px;">
+      <div class="panel-body"> 
+        <?php echo $_product->getSizeAndFit(); ?>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
+</div>

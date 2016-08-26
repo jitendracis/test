@@ -1,0 +1,17 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+?>
+<div class="top-left">  <a href="#"><?php echo __('Shop our Spring 2017 Collection NOW!'); ?></a> </div> 
+
+<div class="top-right hidden-xs">
+<ul>
+<li><a href="javascript:void(0)"><?php echo __('Find A Store'); ?></a></li>
+<li><a href="<?php echo $this->getUrl('contact'); ?>"><?php echo __('Contact Us'); ?></a></li>
+<?php if($customerSession->isLoggedIn()) { ?>
+    <li><a href="<?php echo $this->getUrl('customer/account/logout'); ?>"><?php echo __('Logout'); ?></a></li>
+<?php }else{ ?>
+    <li><a href="<?php echo $this->getUrl('customer/account/login'); ?>"><?php echo __('Retailer Login'); ?></a></li>
+<?php } ?>
+</ul>
+</div> <!--end top-right-->

@@ -1,0 +1,20 @@
+<div class="col-sm-6 col-xs-6 header-widgets">
+  <div class="clearfix"></div>
+  <ul class="show-fixed">
+    <li>
+      <a href="<?php echo $this->getUrl('wishlist') ?>" class="unlike">
+        <img src="<?php echo $this->getViewFileUrl('images/un-like.png')?>" alt="">
+      </a>
+    </li>
+    <li class="search">
+      <div class="basic-search">
+        <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Search::form.mini.phtml")->toHtml();?>
+      </div>
+      <a href="#" class="s-icon">
+        <img src="<?php echo $this->getViewFileUrl('images/search-icon.png')?>" alt="">
+      </a>
+    </li>
+    <div class="inputOverlay"></div>
+  <!--<li><a href="#" class="s-icon"><img src="images/bag-icon.png" alt=""/></a></li>-->
+  </ul>
+</div>

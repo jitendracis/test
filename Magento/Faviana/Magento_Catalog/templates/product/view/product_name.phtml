@@ -1,0 +1,18 @@
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct();
+?>
+
+<h1 class="hidden-xs"><?php echo $_product->getName(); ?></h1>
+<h4 class="hidden-xs"><?php echo $_product->getShortDescription(); ?></h4>
+<h4 class="hidden-xs">
+    <?php
+        if ($_product->isAvailable()){
+            // echo __('Avaibility: ').('In stock') ;
+        }else{
+            // echo __('Avaibility: ').('Out of stock');
+        }
+    ?>
+</h4>
+<h4 class="hidden-xs"><?php // echo __('Sku: ').$_product->getSku();?></h4>
+<h4><span><?php echo _('Sizes: '); ?></span><?php echo $_product->getSizes(); ?><a href="javascript:void(0)"><?php echo __('Size Guide') ; ?></a></h4>

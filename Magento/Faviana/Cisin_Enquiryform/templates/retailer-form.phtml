@@ -1,0 +1,131 @@
+
+
+<script>
+ 
+</script>
+<form class="form contact"
+      action="<?php /* @escapeNotVerified */ echo $this->getUrl('enquiryform/index/retailerform/'); ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'>
+<div class="form-1">
+
+<ul>
+<li>
+   <span><?php echo __('Name');?></span>
+   <input type="text" name="name" data-validate="{required:true}" class="form-control" placeholder="Full Name">
+</li>
+<li>
+   <span><?php echo __('Email');?></span>
+   <input type="email" name="email" data-validate="{required:true, 'validate-email':true}" class="form-control" placeholder="Email">
+</li>
+<li>
+   <span><?php echo __('Daytime Phone Number');?> </span> 
+   <input type="text" name="phoneno" data-validate="{required:true,'validate-phoneStrict':true}" class="form-control" placeholder="PhoneNo">
+</li>
+<li class="clearfix">
+  <span><?php echo __('I am a ...');?> </span>
+  <select class="s-box form-control" name="iam">
+		<option value=""><?php echo __('PLEASE SELECT');?></option>
+		<option value="TALENT/CELEBRITY"><?php echo __('TALENT/CELEBRITY');?></option>
+		<option value="STYLIST"><?php echo __('STYLIST');?></option>
+		<option value="BLOGGER/INFLUENCER"><?php echo __('BLOGGER/INFLUENCER');?></option>
+		<option value="PUBLICIST/AGENT/MANAGER"><?php echo __('PUBLICIST/AGENT/MANAGER');?></option>
+		<option value="EDITOR/PUBLICATION"><?php echo __('EDITOR/PUBLICATION');?></option>
+        <option value="OTHER"><?php echo __('OTHER');?></option>
+   
+        
+  </select>
+</li>
+<li class="clearfix">
+   <span><?php echo __('I want to request a dress for ...');?></span>
+   <select class="s-box form-control" name="dress">
+		<option value=""><?php echo __('Please Select...');?></option>
+		<option value="RED CARPET EVENT"><?php echo __('RED CARPET EVENT');?></option>
+		<option value="EDITORIAL PHOTOSHOOT"><?php echo __('EDITORIAL PHOTOSHOOT');?></option>
+		<option value="CELEBRITY APPEARANCE"><?php echo __('CELEBRITY APPEARANCE');?></option>
+		<option value="MEDIA PLACEMENT"><?php echo __('MEDIA PLACEMENT');?> </option>
+		<option value="SPONSORSHIP OPPORTUNITY"><?php echo __('SPONSORSHIP OPPORTUNITY');?></option>
+        
+        <option value="OTHER"><?php echo __('OTHER');?></option>
+ </select>
+</li>
+<li>
+
+<div class="row">
+  <div class="col-sm-4 clearfix mar-b-30">
+
+   <span><?php echo __('Style Number');?>  </span>
+   <input type="text" name="stylenumber" data-validate="{required:true,'validate-number':true}" class="form-control" placeholder="STYLE NUMBER ">
+  </div>
+
+<div class="col-sm-4 clearfix mar-b-30">
+
+   <span><?php echo __('Color');?> </span>
+   <input type="text" class="form-control" data-validate="{required:true}" name="color" placeholder="COLOR">
+</div>
+
+<div class="col-sm-4 clearfix mar-b-30">
+
+   <span><?php echo __('Size');?> </span>
+   <input type="text" class="form-control" data-validate="{required:true,'validate-number':true}" name="size" placeholder="SIZE">
+</div>
+
+<div class="clearfix"></div>
+</div>
+
+</li>
+<li class="checkbox"> 
+    <input type="checkbox" id="checkbox10">
+        <label for="checkbox10">
+                <?php echo __('or request a showroom appointment.');?>	
+        </label>
+</li>
+<li>
+
+<div class="row">
+    <div class="col-sm-6 clearfix mar-b-30">
+        <span><?php echo __('Date of Event');?>	  </span>
+        <div class="input_group">
+             <input type="date" name="birthday" data-validate="{required:true,'validate-date':true}" id="datapicker" class="form-control" placeholder="Birthday">
+             <a href="#" class="addon fa fa-calendar" ></a></div>
+</div>
+
+<div class="col-sm-6 clearfix mar-b-30">
+    <span><?php echo __('Approximate Return Date');?> </span>
+    <div class="input_group">
+            <input type="date" class="form-control" data-validate="{required:true,'validate-date':true}" name="apporixmatedate" placeholder="Approximate Return Date" id="datapicker2">
+            <a href="#" class="addon fa fa-calendar"></a></div>
+</div>
+<div class="clearfix"></div>
+</div>
+</li>
+<li>
+    <span><?php echo __('Location');?></span>
+    <input type="text" class="form-control" data-validate="{required:true}" name="location" placeholder="Location">
+</li>
+<li>
+   <span><?php echo __('Additional Comments');?></span>
+   <textarea class="form-control textarea" data-validate="{required:true}" rows="3" name="comment" placeholder="comment"></textarea>
+</li>
+<li>
+    <p><?php echo __('For any additional marketing or public relations inquiries please contact');?> <a href="mailto:pr@faviana.com">pr@faviana.com</a>.
+    </p>
+</li>
+<li class="checkbox"> <input type="checkbox" id="checkbox11" checked>
+    <label for="checkbox11">
+            <?php echo __('Subscribe to our mailing list.');?>
+    </label></li>
+<li class="text-center"><button type="submit" class="btn btn-black"><?php echo __('SUBMIT');?></button></li>
+</ul>
+
+</div> <!--end form-1-->
+</form>
+  <script type="text/javascript">
+  jQuery(document).ready(function(){
+        jQuery("#datepicker")datepicker();
+      
+
+  })
+  </script>

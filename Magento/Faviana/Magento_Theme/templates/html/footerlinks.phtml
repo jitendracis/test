@@ -1,0 +1,4 @@
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_links_faviana')->toHtml();?>        
+<div class="footer-news row hidden-xs">
+  <?php echo $this->getLayout()->createBlock("Magento\Newsletter\Block\Subscribe")->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml();?>
+</div>

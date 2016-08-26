@@ -1,0 +1,124 @@
+.page-header .panel.wrapper{
+background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    font-size: 18px;
+    height: 52px;
+    line-height: 52px;
+    overflow: hidden;
+    padding: 0 30px;
+    width: 100%;
+}
+
+.header.panel ul {
+    float: right;
+}
+
+.navi ul > li {
+    margin: 0;
+}
+.navi .pull-left{
+        display: inline-flex;
+}
+.nav-box h5 a{
+    font-family: 'news_gothic_stdbold';
+    font-size: 16px;
+    margin-top: 0px;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    cursor: default;
+}
+
+.subnav .sub-left.pull-left {
+  display: block;
+}
+
+.navi a.direct_menu{
+    font-family: 'newsgoth_lt_btlight';
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    margin-right:25px;
+	
+	display:block;
+	line-height:25px;
+	font-weight:600;
+	width:100%;
+}
+.sections.nav-sections{
+    display: none;
+}
+.cms-index-index p {
+    margin: 0;
+}
+.footer-links ul li{
+    margin: 0;
+}
+
+ul.form-list li a:hover{
+    text-decoration: none;
+}
+
+/*#maincontent{
+    padding:0;
+    margin:0;
+}*/
+
+.custom-forms{
+    margin-top:50px;
+}
+
+.page-layout-1column .product-info-main.col-md-6, .page-layout-1column .product.media.col-md-6{
+    width: 50%;
+}
+.product-info-main.prod-info h1{
+    margin-top:0;
+    margin-bottom: 10px;
+}
+
+.product-add-form .box-tocart{
+    margin: 0;
+}
+.product-add-form .box-tocart .fieldset .actions{
+    padding: 0;
+}
+.product-add-form .box-tocart .fieldset .actions button:hover{
+    border: solid 2px;
+    border-color: transparent;
+}
+.product-add-form.colors-list.clearfix .product-options-wrapper .fieldset .field  label{
+    color: #000;
+    float: left;
+    width: 100%;
+}
+.product-add-form.colors-list.clearfix .box-tocart .input-text.qty{
+    width: 43px;
+    height: 43px;   
+}
+.product-add-form.colors-list.clearfix .product-options-wrapper .fieldset .field  .control{
+    float: left;
+}
+
+.prod-heading.collapsed:hover:after, .prod-heading:after, .prod-heading:after{
+    content: "";
+    background: url(../images/substract.png) no-repeat;
+    position: absolute;
+    right: 0;
+    top: 11px;
+    width: 15px;
+    height: 15px;
+    background-size: 100%;
+}
+
+.prod-heading.collapsed:after, .prod-heading:hover:after, .prod-heading.active:after{
+    content: "";
+    background: url(../images/add.png) no-repeat;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    background-size: 100%;
+}

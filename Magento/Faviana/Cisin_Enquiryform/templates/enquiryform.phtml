@@ -1,0 +1,88 @@
+<?php
+
+
+
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+
+
+<div class="container ctn">
+<div class="row">
+
+
+<div class="col-md-9 left-bar">
+<h1 class="contact-title"><?php echo __('CONTACT US'); ?> </h1>
+<ul class="form-list">
+<li><a href="#" class="customer"><?php echo __('CUSTOMER');?></a></li>
+<li><a href="#" class="public-relation"><?php echo __('PUBLIC RELATIONS');?></a></li>
+<li><a href="#" class="retailer"><?php echo __('RETAILER');?></a></li>
+
+</ul>
+
+<!--
+  form contant 
+  Date:23/08/16
+-->
+<div class="custom-forms">
+<div class="contactus-form">
+      <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Cisin_Enquiryform::contact-form.phtml")->toHtml();?>
+</div>
+<div class="public-relation-form">
+    <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Cisin_Enquiryform::public-relation-form.phtml")->toHtml();?>
+</div>
+<div class="retailer-form">
+    <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Cisin_Enquiryform::retailer-form.phtml")->toHtml();?>
+</div>
+</div>
+<!--end-->
+</div>
+
+<div class="col-md-3  right-bar hidden-xs hidden-sm">
+ <div class="address-box">
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('headquarter_address')->toHtml();?>
+
+</div><!--end address-box-->
+
+</div> <!--end right-bar-->
+
+
+
+<div class="clearfix"></div>
+</div> <!--end row-->
+</div> <!--end ctn-->
+
+
+<script type="text/javascript">
+    // customer public-relation retailer
+    // contactus-form public-relation-form retailer-form
+    jQuery(document).ready(function(){
+        jQuery(".contactus-form").hide();
+        jQuery(".public-relation-form").hide();
+        jQuery(".retailer-form").hide();
+     jQuery(".customer").click(function(){
+         jQuery(".contactus-form").toggle();
+         jQuery(".public-relation-form").hide();
+         jQuery(".retailer-form").hide();
+
+     })
+     jQuery(".public-relation").click(function(){
+         jQuery(".public-relation-form").toggle();
+         jQuery(".contactus-form").hide();
+         jQuery(".retailer-form").hide();
+
+     })
+     jQuery(".retailer").click(function(){
+         jQuery(".retailer-form").toggle();
+         jQuery(".contactus-form").hide();
+         jQuery(".public-relation-form").hide();
+     })
+
+    })
+</script>
+
+

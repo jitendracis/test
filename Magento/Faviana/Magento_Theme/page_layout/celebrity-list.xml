@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">-->
+<!--    <update handle="1column"/>-->
+<!--        <move element="breadcrumbs" destination="cisin" before="main.content"/>-->
+<!--        -->
+<!--        <referenceContainer name="columns" htmlTag="div" class="left-sidebar">-->
+<!--            <container name="cat-left" htmlTag="div" htmlClass="left-sidebar">-->
+<!--                <container name="cat-left-offers" htmlTag="div" htmlClass="offers">-->
+<!--                    <block class="Cis\Celebrity\Block\Celebrity" name="celebrity.category" template="celebrity_category.phtml"/>-->
+<!--                </container>-->
+<!--            </container>-->
+<!--             -->
+<!--        </referenceContainer>-->
+<!--        -->
+<!--</layout>-->
+
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="1column"/>
+    <referenceContainer name="columns">
+        <container name="div.sidebar.main" htmlTag="div" htmlClass="sidebar sidebar-main" after="main">
+            <container name="sidebar.main" as="sidebar_main" label="Sidebar Main"/>
+        </container>
+        <container name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
+            <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
+        </container>
+    </referenceContainer>
+</layout>

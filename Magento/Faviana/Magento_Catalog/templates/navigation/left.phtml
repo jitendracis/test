@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Category left navigation
+ *
+ * @var $block \Magento\Catalog\Block\Navigation
+ */
+?>
+<?php if (!$block->getCategory()) {
+    return;
+} ?>
+<?php $_categories = $block->getCurrentChildCategories(); ?>
+<?php $_count = is_array($_categories) ? count($_categories) : $_categories->count(); ?>
+<?php if ($_count): ?>
+    <div class="panel">
+        <div role="heading" aria-level="3" role="tab" id="heading0" class="filter-options-title panel-heading">
+            <h4 class="panel-title">
+                <a  class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                    <?php /* @escapeNotVerified */ echo __('Category') ?>
+                </a>
+            </h4>
+        </div>
+        <div id="collapse0" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading0" aria-expanded="false">
+            <div class="panel-body">
+              <ul>
+                <?php foreach ($_categories as $_category): ?>
+                    <?php if ($_category->getIsActive()): ?>
+                        <li class="item">
+                            <a href="<?php /* @escapeNotVerified */ echo $block->getCategoryUrl($_category) ?>"<?php if ($block->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $block->escapeHtml($_category->getName()) ?></a>
+                            <span class="count"><?php /* @escapeNotVerified */ echo $_category->getProductCount() ?></span>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach ?>
+              </ul>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

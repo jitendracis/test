@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd">
+    <layout id="celebrity-list">
+        <label translate="true">celebrity-list</label>
+    </layout>
+    <layout id="faviana_home">
+        <label translate="true">Faviana Home</label>
+    </layout>
+    <layout id="1column-faviana">
+        <label translate="true">1column Faviana</label>
+    </layout>    
+</page_layouts>

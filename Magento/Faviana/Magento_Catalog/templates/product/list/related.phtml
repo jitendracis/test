@@ -1,0 +1,28 @@
+<div class="clearfix"></div>
+<?php
+    $items = $block->getItems();
+    $limit = $block->getPositionLimit();
+    $limit_set = 1;
+    if(count($items)){
+?>
+<div class="prod-row">
+    <a class="prod-heading " role="button" data-toggle="collapse" href="#collapseRelated" aria-expanded="true" aria-controls="collapseRelated">
+        <span><?php echo __('YOU MAY ALSO LIKE') ; ?> </span>
+    </a>
+    <div class="collapse in" id="collapseRelated">
+        <div class="well">  
+            <div class="row">
+                <?php foreach($items as $_item){ if($limit_set <= 5){ ?>
+                <div class=" w-20 col-sm-3 col-xs-6">
+                    <div class="prod-box">
+                        <a href="<?php echo $block->getProductUrl($_item) ?>">
+                            <img alt="" src="<?php echo $productImage = $block->getUrl().'pub/media/catalog/product' . $_item->getImage(); ?>">
+                        </a> 
+                    </div>
+                </div>
+                <?php } $limit_set++; } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>

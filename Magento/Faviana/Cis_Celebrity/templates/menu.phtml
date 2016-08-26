@@ -1,0 +1,99 @@
+<a href="<?php echo $block->getUrl(''); ?>" class="small-logo"><img src="<?php echo $block->getViewFileUrl('images/logo-small.png')?>" alt="small_logo"></a>
+<?php
+$categoriesLevel0 = $this->getRootCategories();
+    if($categoriesLevel0) {
+        echo "<ul>";
+        foreach ($categoriesLevel0 as $categoryLevel0) {    
+            echo "<li>";
+            echo "<a class='menu_a' href='".$this->getCategoryUrl($categoryLevel0)."' data-image-type='".$this->getImageUrl($categoryLevel0)."'>";
+                echo $categoryLevel0->getName();
+            echo "</a>"
+            ?>
+        <?php
+            $categoriesLevel1 = $this->getSubCategories($categoryLevel0);
+            $image_position = $this->getImagePosition($categoryLevel0);
+            if ($categoriesLevel1 && $categoriesLevel1->count()>0) {
+        ?>
+                <div class="subnav">
+                    <div class="nav-wrap">
+                        <?php if($image_position == 'Right') { ?>
+                            <div class="sub-left pull-left">
+                                <?php
+                                    foreach ($categoriesLevel1 as $subCategoryLevel1) {
+                                        $view_all_link = $this->getCategoryUrl($subCategoryLevel1);
+                                        $categoriesLevel2 = $this->getSubCategories($subCategoryLevel1);
+                                        if ($categoriesLevel2 && $categoriesLevel2->count()>0) {
+                                            echo "<div class='nav-box'>"; 
+                                            echo "<h5><a href='#' data-image-type='". $this->getImageUrl($subCategoryLevel1) ."' >" . $subCategoryLevel1->getName() . "</a></h5>";
+                                            echo "<ul>";
+                                            foreach ($categoriesLevel2 as $subCategoryLevel2) {
+                                                echo "<li><a class='menu_a' href='" . $this->getCategoryUrl($subCategoryLevel2) . "' data-image-type='" . $this->getImageUrl($subCategoryLevel2) . "' >" . $subCategoryLevel2->getName() . "</a></li>";
+                                            }
+                                            echo "<li class='view-all'><a href='".$view_all_link."'>".__('View All')."</a></li>";
+                                            echo "</ul>";
+                                            echo "</div>";
+                                        } else{
+                                            echo "<a class='menu_a direct_menu' href='" . $this->getCategoryUrl($subCategoryLevel1) . "' data-image-type='" . $this->getImageUrl($subCategoryLevel1) . "' >" . $subCategoryLevel1->getName() . "</a>";
+                                        }
+                                    }
+                                ?>    
+                            </div>
+                            <div class="nav-thumb pull-right categroy-img"><img src="" alt=""/></div>
+                        <?php } elseif($image_position == 'Left'){ ?>
+                            <div class="nav-thumb pull-left categroy-img">
+                                <img src="" alt=""/>
+                            </div>
+                            <div class="pull-right sub-left">
+                                <?php
+                                    foreach ($categoriesLevel1 as $subCategoryLevel1) {
+                                        $view_all_link = $this->getCategoryUrl($subCategoryLevel1);
+                                        $categoriesLevel2 = $this->getSubCategories($subCategoryLevel1);
+                                        if ($categoriesLevel2 && $categoriesLevel2->count()>0) {
+                                            echo "<div class='nav-box'>"; 
+                                            echo "<h5><a href='#' data-image-type='". $this->getImageUrl($subCategoryLevel1) ."' >" . $subCategoryLevel1->getName() . "</a></h5>";
+                                            echo "<ul>";
+                                            foreach ($categoriesLevel2 as $subCategoryLevel2) {
+                                                echo "<li><a class='menu_a' href='" . $this->getCategoryUrl($subCategoryLevel2) . "' data-image-type='" . $this->getImageUrl($subCategoryLevel2) . "' >" . $subCategoryLevel2->getName() . "</a></li>";
+                                            }
+                                            echo "<li class='view-all'><a href='".$view_all_link."'>".__('View All')."</a></li>";
+                                            echo "</ul>";
+                                            echo "</div>";
+                                        } else{
+                                            echo "<a class='menu_a direct_menu' href='" . $this->getCategoryUrl($subCategoryLevel1) . "' data-image-type='" . $this->getImageUrl($subCategoryLevel1) . "' >" . $subCategoryLevel1->getName() . "</a>";
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        <?php }else{ ?>
+                            <div class="sub-left pull-left">
+                                <?php
+                                    foreach ($categoriesLevel1 as $subCategoryLevel1) {
+                                        $view_all_link = $this->getCategoryUrl($subCategoryLevel1);
+                                        $categoriesLevel2 = $this->getSubCategories($subCategoryLevel1);
+                                        if ($categoriesLevel2 && $categoriesLevel2->count()>0) {
+                                            echo "<div class='nav-box'>"; 
+                                            echo "<h5><a href='#' data-image-type='". $this->getImageUrl($subCategoryLevel1) ."' >" . $subCategoryLevel1->getName() . "</a></h5>";
+                                            echo "<ul>";
+                                            foreach ($categoriesLevel2 as $subCategoryLevel2) {
+                                                echo "<li><a class='menu_a' href='" . $this->getCategoryUrl($subCategoryLevel2) . "' data-image-type='" . $this->getImageUrl($subCategoryLevel2) . "' >" . $subCategoryLevel2->getName() . "</a></li>";
+                                            }
+                                            echo "<li class='view-all'><a href='".$view_all_link."'>".__('View All')."</a></li>";
+                                            echo "</ul>";
+                                            echo "</div>";
+                                        } else{
+                                            echo "<a class='menu_a direct_menu' href='" . $this->getCategoryUrl($subCategoryLevel1) . "' data-image-type='" . $this->getImageUrl($subCategoryLevel1) . "' >" . $subCategoryLevel1->getName() . "</a>";
+                                        }
+                                    }
+                                ?>    
+                            </div>
+                            <div class="nav-thumb pull-right categroy-img"><img src="" alt=""/></div>
+                        <?php } ?>
+                    </div>
+                </div>
+    <?php
+            }
+            echo "</li>";
+        }
+        echo "</ul>";
+    }
+?>
